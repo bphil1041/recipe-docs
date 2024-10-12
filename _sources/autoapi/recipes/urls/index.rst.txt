@@ -1,0 +1,19 @@
+recipes.urls
+============
+
+.. py:module:: recipes.urls
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   recipes.urls.urlpatterns
+
+
+Module Contents
+---------------
+
+.. py:data:: urlpatterns
+

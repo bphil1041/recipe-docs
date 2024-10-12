@@ -1,0 +1,105 @@
+recipes.views
+=============
+
+.. py:module:: recipes.views
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   recipes.views.RecipeListView
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   recipes.views.home_view
+   recipes.views.about_view
+   recipes.views.recipe_detail_view
+   recipes.views.login_view
+   recipes.views.logout_view
+   recipes.views.visualize_recipes
+   recipes.views.signup
+   recipes.views.profile_view
+   recipes.views.profile
+   recipes.views.add_recipe
+
+
+Module Contents
+---------------
+
+.. py:function:: home_view(request)
+
+   Render the home page for the recipes app.
+
+
+.. py:function:: about_view(request)
+
+   Render the About Me page.
+
+
+.. py:class:: RecipeListView(**kwargs)
+
+   Bases: :py:obj:`django.contrib.auth.mixins.LoginRequiredMixin`, :py:obj:`django.views.generic.ListView`
+
+
+   Render the list of recipes with optional filtering and pagination.
+
+
+   .. py:attribute:: model
+
+
+   .. py:attribute:: template_name
+      :value: 'recipes/recipes_list.html'
+
+
+
+   .. py:attribute:: context_object_name
+      :value: 'recipes'
+
+
+
+   .. py:method:: get_queryset()
+
+      Filter recipes based on the search query.
+
+
+
+   .. py:method:: get_context_data(**kwargs)
+
+      Add DataFrame and search query to context.
+
+
+
+.. py:function:: recipe_detail_view(request, recipe_id)
+
+   Render the detail view for a specific recipe.
+
+
+.. py:function:: login_view(request)
+
+   Handle user login.
+
+
+.. py:function:: logout_view(request)
+
+   Handle user logout.
+
+
+.. py:function:: visualize_recipes()
+
+   Create a bar chart visualizing the number of recipes by difficulty.
+
+
+.. py:function:: signup(request)
+
+.. py:function:: profile_view(request)
+
+.. py:function:: profile(request)
+
+.. py:function:: add_recipe(request)
+

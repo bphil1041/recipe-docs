@@ -1,0 +1,18 @@
+recipe_project
+==============
+
+.. py:module:: recipe_project
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/recipe_project/asgi/index
+   /autoapi/recipe_project/settings/index
+   /autoapi/recipe_project/urls/index
+   /autoapi/recipe_project/wsgi/index
+
+

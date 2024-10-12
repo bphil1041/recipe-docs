@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>recipe_project.settings &#8212; RecipEase 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <script src="../../_static/documentation_options.js?v=29a6c3e3"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for recipe_project.settings</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># Build paths inside the project like this: BASE_DIR / &#39;subdir&#39;.</span>
+<div class="viewcode-block" id="BASE_DIR">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.BASE_DIR">[docs]</a>
+<span class="n">BASE_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span></div>
+
+
+<span class="c1"># Quick-start development settings - unsuitable for production</span>
+<span class="c1"># See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/</span>
+
+<span class="c1"># SECURITY WARNING: keep the secret key used in production secret!</span>
+<div class="viewcode-block" id="SECRET_KEY">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.SECRET_KEY">[docs]</a>
+<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s1">&#39;django-insecure-@87xk46*y)grs)!d*17*4z$r8lvxrz2z_v(8&amp;o$r+</span><span class="si">%a</span><span class="s1">c$a)m+8&#39;</span></div>
+
+
+<span class="c1"># SECURITY WARNING: don&#39;t run with debug turned on in production!</span>
+<div class="viewcode-block" id="DEBUG">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.DEBUG">[docs]</a>
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="ALLOWED_HOSTS">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.ALLOWED_HOSTS">[docs]</a>
+<span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[]</span></div>
+
+
+<span class="c1"># Application definition</span>
+<div class="viewcode-block" id="INSTALLED_APPS">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.INSTALLED_APPS">[docs]</a>
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+    <span class="c1"># recipe_project-related apps</span>
+    <span class="s1">&#39;recipes&#39;</span><span class="p">,</span>
+<span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="MIDDLEWARE">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.MIDDLEWARE">[docs]</a>
+<span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.middleware.security.SecurityMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.sessions.middleware.SessionMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.middleware.common.CommonMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.middleware.csrf.CsrfViewMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.messages.middleware.MessageMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;</span><span class="p">,</span>
+<span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="ROOT_URLCONF">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.ROOT_URLCONF">[docs]</a>
+<span class="n">ROOT_URLCONF</span> <span class="o">=</span> <span class="s1">&#39;recipe_project.urls&#39;</span></div>
+
+
+<div class="viewcode-block" id="TEMPLATES">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.TEMPLATES">[docs]</a>
+<span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;BACKEND&#39;</span><span class="p">:</span> <span class="s1">&#39;django.template.backends.django.DjangoTemplates&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;DIRS&#39;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s1">&#39;APP_DIRS&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;context_processors&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">&#39;django.template.context_processors.debug&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;django.template.context_processors.request&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;django.contrib.auth.context_processors.auth&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;django.contrib.messages.context_processors.messages&#39;</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="WSGI_APPLICATION">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.WSGI_APPLICATION">[docs]</a>
+<span class="n">WSGI_APPLICATION</span> <span class="o">=</span> <span class="s1">&#39;recipe_project.wsgi.application&#39;</span></div>
+
+
+<span class="c1"># Database</span>
+<div class="viewcode-block" id="DATABASES">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.DATABASES">[docs]</a>
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.sqlite3&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s1">&#39;db.sqlite3&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span></div>
+
+
+<span class="c1"># Password validation</span>
+<div class="viewcode-block" id="AUTH_PASSWORD_VALIDATORS">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.AUTH_PASSWORD_VALIDATORS">[docs]</a>
+<span class="n">AUTH_PASSWORD_VALIDATORS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.UserAttributeSimilarityValidator&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.MinimumLengthValidator&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.CommonPasswordValidator&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.auth.password_validation.NumericPasswordValidator&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">]</span></div>
+
+
+<span class="c1"># Internationalization</span>
+<div class="viewcode-block" id="LANGUAGE_CODE">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.LANGUAGE_CODE">[docs]</a>
+<span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s1">&#39;en-us&#39;</span></div>
+
+<div class="viewcode-block" id="TIME_ZONE">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.TIME_ZONE">[docs]</a>
+<span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;UTC&#39;</span></div>
+
+<div class="viewcode-block" id="USE_I18N">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.USE_I18N">[docs]</a>
+<span class="n">USE_I18N</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="USE_TZ">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.USE_TZ">[docs]</a>
+<span class="n">USE_TZ</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+<span class="c1"># Static files (CSS, JavaScript, Images)</span>
+<div class="viewcode-block" id="STATIC_URL">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.STATIC_URL">[docs]</a>
+<span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s1">&#39;static/&#39;</span></div>
+
+
+<span class="c1"># Default primary key field type</span>
+<div class="viewcode-block" id="DEFAULT_AUTO_FIELD">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.DEFAULT_AUTO_FIELD">[docs]</a>
+<span class="n">DEFAULT_AUTO_FIELD</span> <span class="o">=</span> <span class="s1">&#39;django.db.models.BigAutoField&#39;</span></div>
+
+
+<span class="c1"># Media files configuration</span>
+<div class="viewcode-block" id="MEDIA_URL">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.MEDIA_URL">[docs]</a>
+<span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="s1">&#39;/media/&#39;</span></div>
+
+<div class="viewcode-block" id="MEDIA_ROOT">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.MEDIA_ROOT">[docs]</a>
+<span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s1">&#39;recipes&#39;</span> <span class="o">/</span> <span class="s1">&#39;media&#39;</span>  <span class="c1"># Adjusted to avoid extra src</span></div>
+
+
+<div class="viewcode-block" id="LOGIN_URL">
+<a class="viewcode-back" href="../../autoapi/recipe_project/settings/index.html#recipe_project.settings.LOGIN_URL">[docs]</a>
+<span class="n">LOGIN_URL</span> <span class="o">=</span> <span class="s1">&#39;/login/&#39;</span></div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">RecipEase</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Ben Phillips.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

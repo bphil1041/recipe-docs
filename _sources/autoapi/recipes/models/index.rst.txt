@@ -1,0 +1,58 @@
+recipes.models
+==============
+
+.. py:module:: recipes.models
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   recipes.models.DIFFICULTY_CHOICES
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   recipes.models.Recipe
+
+
+Module Contents
+---------------
+
+.. py:data:: DIFFICULTY_CHOICES
+   :value: [('Easy', 'Easy'), ('Medium', 'Medium'), ('Hard', 'Hard')]
+
+
+.. py:class:: Recipe(*args, **kwargs)
+
+   Bases: :py:obj:`django.db.models.Model`
+
+
+   Make subclasses preserve the alters_data attribute on overridden methods.
+
+
+   .. py:attribute:: title
+
+
+   .. py:attribute:: description
+
+
+   .. py:attribute:: ingredients
+
+
+   .. py:attribute:: cooking_time
+
+
+   .. py:attribute:: difficulty
+
+
+   .. py:attribute:: image
+
+
+   .. py:method:: __str__()
+
+

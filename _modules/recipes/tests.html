@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>recipes.tests &#8212; RecipEase 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <script src="../../_static/documentation_options.js?v=29a6c3e3"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for recipes.tests</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">django.test</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Recipe</span>
+<span class="kn">from</span> <span class="nn">.forms</span> <span class="kn">import</span> <span class="n">RecipeForm</span><span class="p">,</span> <span class="n">SignUpForm</span>
+
+<span class="c1"># Sample data for testing</span>
+
+
+<div class="viewcode-block" id="create_recipe">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.create_recipe">[docs]</a>
+<span class="k">def</span> <span class="nf">create_recipe</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Test Recipe&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Test Description&quot;</span><span class="p">,</span> <span class="n">ingredients</span><span class="o">=</span><span class="s2">&quot;ingredient1, ingredient2&quot;</span><span class="p">,</span> <span class="n">cooking_time</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">difficulty</span><span class="o">=</span><span class="s2">&quot;Easy&quot;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Recipe</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+        <span class="n">ingredients</span><span class="o">=</span><span class="n">ingredients</span><span class="p">,</span>
+        <span class="n">cooking_time</span><span class="o">=</span><span class="n">cooking_time</span><span class="p">,</span>
+        <span class="n">difficulty</span><span class="o">=</span><span class="n">difficulty</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="RecipeListViewTest">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.RecipeListViewTest">[docs]</a>
+<span class="k">class</span> <span class="nc">RecipeListViewTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test the RecipeListView with and without filters.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RecipeListViewTest.setUp">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.RecipeListViewTest.setUp">[docs]</a>
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a user and some test recipes.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s2">&quot;testuser&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;testpassword&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recipe1</span> <span class="o">=</span> <span class="n">create_recipe</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Recipe 1&quot;</span><span class="p">,</span> <span class="n">difficulty</span><span class="o">=</span><span class="s2">&quot;Medium&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recipe2</span> <span class="o">=</span> <span class="n">create_recipe</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Recipe 2&quot;</span><span class="p">,</span> <span class="n">difficulty</span><span class="o">=</span><span class="s2">&quot;Hard&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recipe3</span> <span class="o">=</span> <span class="n">create_recipe</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Recipe 3&quot;</span><span class="p">,</span> <span class="n">difficulty</span><span class="o">=</span><span class="s2">&quot;Easy&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RecipeListViewTest.test_recipe_list_view">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.RecipeListViewTest.test_recipe_list_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_recipe_list_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test that the recipe list view loads and displays the recipes.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;testuser&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;testpassword&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;recipes_list&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertContains</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">recipe1</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertContains</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">recipe2</span><span class="o">.</span><span class="n">title</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RecipeListViewTest.test_recipe_list_view_filtering">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.RecipeListViewTest.test_recipe_list_view_filtering">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_recipe_list_view_filtering</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test filtering recipes by title.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;testuser&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;testpassword&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;recipes_list&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;?search=Recipe 1&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertContains</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">recipe1</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertNotContains</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">recipe2</span><span class="o">.</span><span class="n">title</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="RecipeDetailViewTest">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.RecipeDetailViewTest">[docs]</a>
+<span class="k">class</span> <span class="nc">RecipeDetailViewTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test the recipe detail view.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="RecipeDetailViewTest.setUp">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.RecipeDetailViewTest.setUp">[docs]</a>
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a user and a test recipe.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s2">&quot;testuser&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;testpassword&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recipe</span> <span class="o">=</span> <span class="n">create_recipe</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="RecipeDetailViewTest.test_recipe_detail_view">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.RecipeDetailViewTest.test_recipe_detail_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_recipe_detail_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test that the recipe detail view works and displays the recipe.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;testuser&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;testpassword&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;recipe_detail&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">recipe</span><span class="o">.</span><span class="n">id</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertContains</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">recipe</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertContains</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s2">&quot;ingredient1&quot;</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="SignUpViewTest">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.SignUpViewTest">[docs]</a>
+<span class="k">class</span> <span class="nc">SignUpViewTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test the user signup view.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="SignUpViewTest.test_signup_view">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.SignUpViewTest.test_signup_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_signup_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test that the signup form is rendered and works.&quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;signup&#39;</span><span class="p">),</span> <span class="p">{</span>
+            <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;newuser&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="s1">&#39;newuser@example.com&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;password1&#39;</span><span class="p">:</span> <span class="s1">&#39;strongpassword&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;password2&#39;</span><span class="p">:</span> <span class="s1">&#39;strongpassword&#39;</span>
+        <span class="p">})</span>
+        <span class="c1"># Should redirect after successful signup</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">302</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">&quot;newuser&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">())</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LoginViewTest">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.LoginViewTest">[docs]</a>
+<span class="k">class</span> <span class="nc">LoginViewTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test the user login view.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="LoginViewTest.setUp">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.LoginViewTest.setUp">[docs]</a>
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a test user.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s2">&quot;testuser&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;testpassword&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LoginViewTest.test_login_view">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.LoginViewTest.test_login_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_login_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test that a user can log in successfully.&quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">),</span> <span class="p">{</span>
+            <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;testuser&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;testpassword&#39;</span>
+        <span class="p">})</span>
+        <span class="c1"># Should redirect after successful login</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">302</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AddRecipeViewTest">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.AddRecipeViewTest">[docs]</a>
+<span class="k">class</span> <span class="nc">AddRecipeViewTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test the add recipe view.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="AddRecipeViewTest.setUp">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.AddRecipeViewTest.setUp">[docs]</a>
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a test user.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s2">&quot;testuser&quot;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">&quot;testpassword&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AddRecipeViewTest.test_add_recipe_view">
+<a class="viewcode-back" href="../../autoapi/recipes/tests/index.html#recipes.tests.AddRecipeViewTest.test_add_recipe_view">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_add_recipe_view</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test that a user can add a recipe successfully.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;testuser&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;testpassword&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;add_recipe&#39;</span><span class="p">),</span> <span class="p">{</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Test Recipe&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;Test Description&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;ingredients&#39;</span><span class="p">:</span> <span class="s1">&#39;ingredient1, ingredient2&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;cooking_time&#39;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+            <span class="s1">&#39;difficulty&#39;</span><span class="p">:</span> <span class="s1">&#39;Medium&#39;</span><span class="p">,</span>
+        <span class="p">})</span>
+        <span class="c1"># Should redirect to profile after adding</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">302</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">Recipe</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Test Recipe&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">())</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">RecipEase</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Ben Phillips.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

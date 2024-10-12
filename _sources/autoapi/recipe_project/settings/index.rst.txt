@@ -1,0 +1,106 @@
+recipe_project.settings
+=======================
+
+.. py:module:: recipe_project.settings
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   recipe_project.settings.BASE_DIR
+   recipe_project.settings.SECRET_KEY
+   recipe_project.settings.DEBUG
+   recipe_project.settings.ALLOWED_HOSTS
+   recipe_project.settings.INSTALLED_APPS
+   recipe_project.settings.MIDDLEWARE
+   recipe_project.settings.ROOT_URLCONF
+   recipe_project.settings.TEMPLATES
+   recipe_project.settings.WSGI_APPLICATION
+   recipe_project.settings.DATABASES
+   recipe_project.settings.AUTH_PASSWORD_VALIDATORS
+   recipe_project.settings.LANGUAGE_CODE
+   recipe_project.settings.TIME_ZONE
+   recipe_project.settings.USE_I18N
+   recipe_project.settings.USE_TZ
+   recipe_project.settings.STATIC_URL
+   recipe_project.settings.DEFAULT_AUTO_FIELD
+   recipe_project.settings.MEDIA_URL
+   recipe_project.settings.MEDIA_ROOT
+   recipe_project.settings.LOGIN_URL
+
+
+Module Contents
+---------------
+
+.. py:data:: BASE_DIR
+
+.. py:data:: SECRET_KEY
+   :value: 'django-insecure-@87xk46*y)grs)!d*17*4z$r8lvxrz2z_v(8&o$r+%ac$a)m+8'
+
+
+.. py:data:: DEBUG
+   :value: True
+
+
+.. py:data:: ALLOWED_HOSTS
+   :value: []
+
+
+.. py:data:: INSTALLED_APPS
+   :value: ['django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes',...
+
+
+.. py:data:: MIDDLEWARE
+   :value: ['django.middleware.security.SecurityMiddleware',...
+
+
+.. py:data:: ROOT_URLCONF
+   :value: 'recipe_project.urls'
+
+
+.. py:data:: TEMPLATES
+
+.. py:data:: WSGI_APPLICATION
+   :value: 'recipe_project.wsgi.application'
+
+
+.. py:data:: DATABASES
+
+.. py:data:: AUTH_PASSWORD_VALIDATORS
+
+.. py:data:: LANGUAGE_CODE
+   :value: 'en-us'
+
+
+.. py:data:: TIME_ZONE
+   :value: 'UTC'
+
+
+.. py:data:: USE_I18N
+   :value: True
+
+
+.. py:data:: USE_TZ
+   :value: True
+
+
+.. py:data:: STATIC_URL
+   :value: 'static/'
+
+
+.. py:data:: DEFAULT_AUTO_FIELD
+   :value: 'django.db.models.BigAutoField'
+
+
+.. py:data:: MEDIA_URL
+   :value: '/media/'
+
+
+.. py:data:: MEDIA_ROOT
+
+.. py:data:: LOGIN_URL
+   :value: '/login/'
+
+

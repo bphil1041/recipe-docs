@@ -1,0 +1,131 @@
+recipes.tests
+=============
+
+.. py:module:: recipes.tests
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   recipes.tests.RecipeListViewTest
+   recipes.tests.RecipeDetailViewTest
+   recipes.tests.SignUpViewTest
+   recipes.tests.LoginViewTest
+   recipes.tests.AddRecipeViewTest
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   recipes.tests.create_recipe
+
+
+Module Contents
+---------------
+
+.. py:function:: create_recipe(title='Test Recipe', description='Test Description', ingredients='ingredient1, ingredient2', cooking_time=30, difficulty='Easy')
+
+.. py:class:: RecipeListViewTest(methodName='runTest')
+
+   Bases: :py:obj:`django.test.TestCase`
+
+
+   Test the RecipeListView with and without filters.
+
+
+   .. py:method:: setUp()
+
+      Create a user and some test recipes.
+
+
+
+   .. py:method:: test_recipe_list_view()
+
+      Test that the recipe list view loads and displays the recipes.
+
+
+
+   .. py:method:: test_recipe_list_view_filtering()
+
+      Test filtering recipes by title.
+
+
+
+.. py:class:: RecipeDetailViewTest(methodName='runTest')
+
+   Bases: :py:obj:`django.test.TestCase`
+
+
+   Test the recipe detail view.
+
+
+   .. py:method:: setUp()
+
+      Create a user and a test recipe.
+
+
+
+   .. py:method:: test_recipe_detail_view()
+
+      Test that the recipe detail view works and displays the recipe.
+
+
+
+.. py:class:: SignUpViewTest(methodName='runTest')
+
+   Bases: :py:obj:`django.test.TestCase`
+
+
+   Test the user signup view.
+
+
+   .. py:method:: test_signup_view()
+
+      Test that the signup form is rendered and works.
+
+
+
+.. py:class:: LoginViewTest(methodName='runTest')
+
+   Bases: :py:obj:`django.test.TestCase`
+
+
+   Test the user login view.
+
+
+   .. py:method:: setUp()
+
+      Create a test user.
+
+
+
+   .. py:method:: test_login_view()
+
+      Test that a user can log in successfully.
+
+
+
+.. py:class:: AddRecipeViewTest(methodName='runTest')
+
+   Bases: :py:obj:`django.test.TestCase`
+
+
+   Test the add recipe view.
+
+
+   .. py:method:: setUp()
+
+      Create a test user.
+
+
+
+   .. py:method:: test_add_recipe_view()
+
+      Test that a user can add a recipe successfully.
+
+
+

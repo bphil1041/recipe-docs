@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>recipes.views &#8212; RecipEase 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+    <script src="../../../_static/documentation_options.js?v=29a6c3e3"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="recipe_project" href="../../recipe_project/index.html" />
+    <link rel="prev" title="recipes.urls" href="../urls/index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-recipes.views">
+<span id="recipes-views"></span><h1>recipes.views<a class="headerlink" href="#module-recipes.views" title="Link to this heading">¶</a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#recipes.views.RecipeListView" title="recipes.views.RecipeListView"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RecipeListView</span></code></a></p></td>
+<td><p>Render the list of recipes with optional filtering and pagination.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#recipes.views.home_view" title="recipes.views.home_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">home_view</span></code></a>(request)</p></td>
+<td><p>Render the home page for the recipes app.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#recipes.views.about_view" title="recipes.views.about_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">about_view</span></code></a>(request)</p></td>
+<td><p>Render the About Me page.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#recipes.views.recipe_detail_view" title="recipes.views.recipe_detail_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recipe_detail_view</span></code></a>(request, recipe_id)</p></td>
+<td><p>Render the detail view for a specific recipe.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#recipes.views.login_view" title="recipes.views.login_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">login_view</span></code></a>(request)</p></td>
+<td><p>Handle user login.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#recipes.views.logout_view" title="recipes.views.logout_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logout_view</span></code></a>(request)</p></td>
+<td><p>Handle user logout.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#recipes.views.visualize_recipes" title="recipes.views.visualize_recipes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">visualize_recipes</span></code></a>()</p></td>
+<td><p>Create a bar chart visualizing the number of recipes by difficulty.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#recipes.views.signup" title="recipes.views.signup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">signup</span></code></a>(request)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#recipes.views.profile_view" title="recipes.views.profile_view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">profile_view</span></code></a>(request)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#recipes.views.profile" title="recipes.views.profile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">profile</span></code></a>(request)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#recipes.views.add_recipe" title="recipes.views.add_recipe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_recipe</span></code></a>(request)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="recipes.views.home_view">
+<span class="sig-prename descclassname"><span class="pre">recipes.views.</span></span><span class="sig-name descname"><span class="pre">home_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/views.html#home_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.home_view" title="Link to this definition">¶</a></dt>
+<dd><p>Render the home page for the recipes app.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="recipes.views.about_view">
+<span class="sig-prename descclassname"><span class="pre">recipes.views.</span></span><span class="sig-name descname"><span class="pre">about_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/views.html#about_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.about_view" title="Link to this definition">¶</a></dt>
+<dd><p>Render the About Me page.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="recipes.views.RecipeListView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">recipes.views.</span></span><span class="sig-name descname"><span class="pre">RecipeListView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/views.html#RecipeListView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.RecipeListView" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">django.contrib.auth.mixins.LoginRequiredMixin</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">django.views.generic.ListView</span></code></p>
+<p>Render the list of recipes with optional filtering and pagination.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="recipes.views.RecipeListView.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="reference internal" href="../../../_modules/recipes/views.html#RecipeListView.model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.RecipeListView.model" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="recipes.views.RecipeListView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'recipes/recipes_list.html'</span></em><a class="reference internal" href="../../../_modules/recipes/views.html#RecipeListView.template_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.RecipeListView.template_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="recipes.views.RecipeListView.context_object_name">
+<span class="sig-name descname"><span class="pre">context_object_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'recipes'</span></em><a class="reference internal" href="../../../_modules/recipes/views.html#RecipeListView.context_object_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.RecipeListView.context_object_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="recipes.views.RecipeListView.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/views.html#RecipeListView.get_queryset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.RecipeListView.get_queryset" title="Link to this definition">¶</a></dt>
+<dd><p>Filter recipes based on the search query.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="recipes.views.RecipeListView.get_context_data">
+<span class="sig-name descname"><span class="pre">get_context_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/views.html#RecipeListView.get_context_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.RecipeListView.get_context_data" title="Link to this definition">¶</a></dt>
+<dd><p>Add DataFrame and search query to context.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="recipes.views.recipe_detail_view">
+<span class="sig-prename descclassname"><span class="pre">recipes.views.</span></span><span class="sig-name descname"><span class="pre">recipe_detail_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recipe_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/views.html#recipe_detail_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.recipe_detail_view" title="Link to this definition">¶</a></dt>
+<dd><p>Render the detail view for a specific recipe.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="recipes.views.login_view">
+<span class="sig-prename descclassname"><span class="pre">recipes.views.</span></span><span class="sig-name descname"><span class="pre">login_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/views.html#login_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.login_view" title="Link to this definition">¶</a></dt>
+<dd><p>Handle user login.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="recipes.views.logout_view">
+<span class="sig-prename descclassname"><span class="pre">recipes.views.</span></span><span class="sig-name descname"><span class="pre">logout_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/views.html#logout_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.logout_view" title="Link to this definition">¶</a></dt>
+<dd><p>Handle user logout.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="recipes.views.visualize_recipes">
+<span class="sig-prename descclassname"><span class="pre">recipes.views.</span></span><span class="sig-name descname"><span class="pre">visualize_recipes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/views.html#visualize_recipes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.visualize_recipes" title="Link to this definition">¶</a></dt>
+<dd><p>Create a bar chart visualizing the number of recipes by difficulty.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="recipes.views.signup">
+<span class="sig-prename descclassname"><span class="pre">recipes.views.</span></span><span class="sig-name descname"><span class="pre">signup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/views.html#signup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.signup" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="recipes.views.profile_view">
+<span class="sig-prename descclassname"><span class="pre">recipes.views.</span></span><span class="sig-name descname"><span class="pre">profile_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/views.html#profile_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.profile_view" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="recipes.views.profile">
+<span class="sig-prename descclassname"><span class="pre">recipes.views.</span></span><span class="sig-name descname"><span class="pre">profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/views.html#profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.profile" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="recipes.views.add_recipe">
+<span class="sig-prename descclassname"><span class="pre">recipes.views.</span></span><span class="sig-name descname"><span class="pre">add_recipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/views.html#add_recipe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.views.add_recipe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">RecipEase</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../conf/index.html">conf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage/index.html">manage</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../recipe_project/index.html">recipe_project</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">API Reference</a><ul>
+  <li><a href="../index.html">recipes</a><ul>
+      <li>Previous: <a href="../urls/index.html" title="previous chapter">recipes.urls</a></li>
+      <li>Next: <a href="../../recipe_project/index.html" title="next chapter">recipe_project</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Ben Phillips.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../../../_sources/autoapi/recipes/views/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

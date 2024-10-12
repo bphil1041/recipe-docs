@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>recipes.tests &#8212; RecipEase 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+    <script src="../../../_static/documentation_options.js?v=29a6c3e3"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="recipes.urls" href="../urls/index.html" />
+    <link rel="prev" title="recipes.models" href="../models/index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-recipes.tests">
+<span id="recipes-tests"></span><h1>recipes.tests<a class="headerlink" href="#module-recipes.tests" title="Link to this heading">¶</a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#recipes.tests.RecipeListViewTest" title="recipes.tests.RecipeListViewTest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RecipeListViewTest</span></code></a></p></td>
+<td><p>Test the RecipeListView with and without filters.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#recipes.tests.RecipeDetailViewTest" title="recipes.tests.RecipeDetailViewTest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RecipeDetailViewTest</span></code></a></p></td>
+<td><p>Test the recipe detail view.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#recipes.tests.SignUpViewTest" title="recipes.tests.SignUpViewTest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SignUpViewTest</span></code></a></p></td>
+<td><p>Test the user signup view.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#recipes.tests.LoginViewTest" title="recipes.tests.LoginViewTest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LoginViewTest</span></code></a></p></td>
+<td><p>Test the user login view.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#recipes.tests.AddRecipeViewTest" title="recipes.tests.AddRecipeViewTest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AddRecipeViewTest</span></code></a></p></td>
+<td><p>Test the add recipe view.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#recipes.tests.create_recipe" title="recipes.tests.create_recipe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_recipe</span></code></a>([title, description, ingredients, ...])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="recipes.tests.create_recipe">
+<span class="sig-prename descclassname"><span class="pre">recipes.tests.</span></span><span class="sig-name descname"><span class="pre">create_recipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Test</span> <span class="pre">Recipe'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Test</span> <span class="pre">Description'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingredients</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ingredient1,</span> <span class="pre">ingredient2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cooking_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">difficulty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Easy'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#create_recipe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.create_recipe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="recipes.tests.RecipeListViewTest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">recipes.tests.</span></span><span class="sig-name descname"><span class="pre">RecipeListViewTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#RecipeListViewTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.RecipeListViewTest" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">django.test.TestCase</span></code></p>
+<p>Test the RecipeListView with and without filters.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="recipes.tests.RecipeListViewTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#RecipeListViewTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.RecipeListViewTest.setUp" title="Link to this definition">¶</a></dt>
+<dd><p>Create a user and some test recipes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="recipes.tests.RecipeListViewTest.test_recipe_list_view">
+<span class="sig-name descname"><span class="pre">test_recipe_list_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#RecipeListViewTest.test_recipe_list_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.RecipeListViewTest.test_recipe_list_view" title="Link to this definition">¶</a></dt>
+<dd><p>Test that the recipe list view loads and displays the recipes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="recipes.tests.RecipeListViewTest.test_recipe_list_view_filtering">
+<span class="sig-name descname"><span class="pre">test_recipe_list_view_filtering</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#RecipeListViewTest.test_recipe_list_view_filtering"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.RecipeListViewTest.test_recipe_list_view_filtering" title="Link to this definition">¶</a></dt>
+<dd><p>Test filtering recipes by title.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="recipes.tests.RecipeDetailViewTest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">recipes.tests.</span></span><span class="sig-name descname"><span class="pre">RecipeDetailViewTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#RecipeDetailViewTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.RecipeDetailViewTest" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">django.test.TestCase</span></code></p>
+<p>Test the recipe detail view.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="recipes.tests.RecipeDetailViewTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#RecipeDetailViewTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.RecipeDetailViewTest.setUp" title="Link to this definition">¶</a></dt>
+<dd><p>Create a user and a test recipe.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="recipes.tests.RecipeDetailViewTest.test_recipe_detail_view">
+<span class="sig-name descname"><span class="pre">test_recipe_detail_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#RecipeDetailViewTest.test_recipe_detail_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.RecipeDetailViewTest.test_recipe_detail_view" title="Link to this definition">¶</a></dt>
+<dd><p>Test that the recipe detail view works and displays the recipe.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="recipes.tests.SignUpViewTest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">recipes.tests.</span></span><span class="sig-name descname"><span class="pre">SignUpViewTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#SignUpViewTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.SignUpViewTest" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">django.test.TestCase</span></code></p>
+<p>Test the user signup view.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="recipes.tests.SignUpViewTest.test_signup_view">
+<span class="sig-name descname"><span class="pre">test_signup_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#SignUpViewTest.test_signup_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.SignUpViewTest.test_signup_view" title="Link to this definition">¶</a></dt>
+<dd><p>Test that the signup form is rendered and works.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="recipes.tests.LoginViewTest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">recipes.tests.</span></span><span class="sig-name descname"><span class="pre">LoginViewTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#LoginViewTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.LoginViewTest" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">django.test.TestCase</span></code></p>
+<p>Test the user login view.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="recipes.tests.LoginViewTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#LoginViewTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.LoginViewTest.setUp" title="Link to this definition">¶</a></dt>
+<dd><p>Create a test user.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="recipes.tests.LoginViewTest.test_login_view">
+<span class="sig-name descname"><span class="pre">test_login_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#LoginViewTest.test_login_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.LoginViewTest.test_login_view" title="Link to this definition">¶</a></dt>
+<dd><p>Test that a user can log in successfully.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="recipes.tests.AddRecipeViewTest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">recipes.tests.</span></span><span class="sig-name descname"><span class="pre">AddRecipeViewTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#AddRecipeViewTest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.AddRecipeViewTest" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">django.test.TestCase</span></code></p>
+<p>Test the add recipe view.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="recipes.tests.AddRecipeViewTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#AddRecipeViewTest.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.AddRecipeViewTest.setUp" title="Link to this definition">¶</a></dt>
+<dd><p>Create a test user.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="recipes.tests.AddRecipeViewTest.test_add_recipe_view">
+<span class="sig-name descname"><span class="pre">test_add_recipe_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/recipes/tests.html#AddRecipeViewTest.test_add_recipe_view"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#recipes.tests.AddRecipeViewTest.test_add_recipe_view" title="Link to this definition">¶</a></dt>
+<dd><p>Test that a user can add a recipe successfully.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">RecipEase</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../conf/index.html">conf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../manage/index.html">manage</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../recipe_project/index.html">recipe_project</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">API Reference</a><ul>
+  <li><a href="../index.html">recipes</a><ul>
+      <li>Previous: <a href="../models/index.html" title="previous chapter">recipes.models</a></li>
+      <li>Next: <a href="../urls/index.html" title="next chapter">recipes.urls</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Ben Phillips.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../../../_sources/autoapi/recipes/tests/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

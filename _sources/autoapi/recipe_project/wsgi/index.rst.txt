@@ -1,0 +1,29 @@
+recipe_project.wsgi
+===================
+
+.. py:module:: recipe_project.wsgi
+
+.. autoapi-nested-parse::
+
+   WSGI config for recipe_project project.
+
+   It exposes the WSGI callable as a module-level variable named ``application``.
+
+   For more information on this file, see
+   https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   recipe_project.wsgi.application
+
+
+Module Contents
+---------------
+
+.. py:data:: application
+

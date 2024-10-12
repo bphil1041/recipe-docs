@@ -1,0 +1,21 @@
+recipes
+=======
+
+.. py:module:: recipes
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/recipes/admin/index
+   /autoapi/recipes/apps/index
+   /autoapi/recipes/forms/index
+   /autoapi/recipes/models/index
+   /autoapi/recipes/tests/index
+   /autoapi/recipes/urls/index
+   /autoapi/recipes/views/index
+
+
